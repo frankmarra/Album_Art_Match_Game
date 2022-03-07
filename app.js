@@ -26,19 +26,22 @@ const gameStart = (gameButtons) => {
   gameButtons.forEach((box) => {
     let randomSymbol = Math.floor(Math.random() * gameArray.length)
     box.innerText = gameArray[randomSymbol]
-    box.classList.add(gameArray[randomSymbol])
+    box.value = gameArray[randomSymbol]
     usedSymbol = gameArray.splice(randomSymbol, 1)
     box.addEventListener('click', () => {
       if (pickOne === '') {
-        pickOne = box.innerText
+        pickOne = box
+        pickOne.disabled = true
       } else if (pickOne !== '' && pickTwo === '') {
-        pickTwo = box.innerText
+        pickTwo = box
+        pickTwo.disabled = true
         console.log(pickOne, pickTwo)
         if (pickOne.value !== pickTwo.value) {
+          pickOne.disabled = false
+          pickTwo.disabled = false
           pickOne = ''
           pickTwo = ''
         } else if (pickOne.value === pickTwo.value) {
-          box.querySelectorAll(`.${pickOne}`).disabled
           pickOne = ''
           pickTwo = ''
         }
@@ -48,26 +51,3 @@ const gameStart = (gameButtons) => {
 }
 
 gameStart(gameButtons)
-
-// for (let i = 0; i < gameButtons.length; i++) {
-//   gameButtons[i].addEventListener('click', () => {
-//     if (pickOne === '') {
-//       pickOne = gameButtons[i].innerText
-//     } else if (pickOne !== '' && pickTwo === '') {
-//       pickTwo = gameButtons[i].innerText
-//       console.log(pickOne, pickTwo)
-//       matchCheck(pickOne, pickTwo)
-//     }
-//   })
-// }
-
-// const matchCheck = (pickOne, pickTwo) => {
-//   if (pickOne.value !== pickTwo.value) {
-//     pickOne = ''
-//     pickTwo = ''
-//   } else if (pickOne.value === pickTwo.value) {
-//     document.querySelectorAll(`.${pickOne}`).disabled
-//     pickOne = ''
-//     pickTwo = ''
-//   }
-// }
