@@ -1,14 +1,13 @@
 const gameButtons = document.querySelectorAll('.game-button')
 const strikes = document.querySelector('.strikes')
 const playAgain = document.querySelector('.play-again-button')
-// let pickOne = ''
-// let pickTwo = ''
 
 //Main function of game
 const gameStart = (buttons) => {
   strikes.innerText = ''
   let pickOne = ''
   let pickTwo = ''
+  let matchCount = 0
   playAgain.disabled = true
   let gameArray = [
     'one',
@@ -68,6 +67,10 @@ const gameStart = (buttons) => {
         } else if (pickOne.value === pickTwo.value) {
           pickOne = ''
           pickTwo = ''
+          matchCount++
+          if (matchCount === 8) {
+            playAgain.disabled = false
+          }
         }
       }
     })
