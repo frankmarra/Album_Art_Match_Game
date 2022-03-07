@@ -1,11 +1,14 @@
 const gameButtons = document.querySelectorAll('.game-button')
 const strikes = document.querySelector('.strikes')
 const playAgain = document.querySelector('.play-again-button')
-let pickOne = ''
-let pickTwo = ''
+// let pickOne = ''
+// let pickTwo = ''
 
 //Main function of game
 const gameStart = (buttons) => {
+  strikes.innerText = ''
+  let pickOne = ''
+  let pickTwo = ''
   playAgain.disabled = true
   let gameArray = [
     'one',
@@ -28,6 +31,8 @@ const gameStart = (buttons) => {
   let usedSymbol = []
   buttons.forEach((box) => {
     box.disabled = false
+    box.innerText = ''
+    box.value = 0
     let randomSymbol = Math.floor(Math.random() * gameArray.length)
     //give HTML button a value.  Once button is clicked, this value will display in the inner text of the button.
     box.value = gameArray[randomSymbol]
