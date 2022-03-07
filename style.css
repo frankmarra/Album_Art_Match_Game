@@ -5,8 +5,15 @@
 body {
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% 1fr 10%;
+  justify-items: center;
 }
 
+.title {
+  grid-column: 1 / -1;
+}
 .game-box {
   display: flex;
   flex-flow: column nowrap;
@@ -15,6 +22,10 @@ body {
 .game-info {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.play-again-button {
+  padding: 15px;
 }
 .game-board {
   width: 640px;
@@ -22,4 +33,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
+}
+
+.game-button {
+  border: 2px solid black;
 }
