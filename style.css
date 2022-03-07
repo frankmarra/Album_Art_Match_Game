@@ -6,6 +6,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.game-box {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.game-info {
+  display: flex;
+  flex-flow: row nowrap;
+}
 .game-board {
   width: 640px;
   height: 640px;
