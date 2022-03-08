@@ -37,10 +37,10 @@ const gameStart = (buttons) => {
   let usedSymbol = []
   //populate board with random boxes and add event listeners to each box
   buttons.forEach((box) => {
-    box.style = 'background: black'
-    box.style = ''
+    box.classList.remove('matched')
+    box.classList.remove('won')
     box.disabled = false
-    box.innerHTML = 'border: 2px solid #36d860;'
+    box.innerHTML = ''
     box.value = 0
     let randomSymbol = Math.floor(Math.random() * gameArray.length)
     //give HTML button a value.  Once button is clicked, this value will display in the inner text of the button.
@@ -76,8 +76,8 @@ const gameStart = (buttons) => {
             }
           }, 500)
         } else if (pickOne.value === pickTwo.value) {
-          pickOne.style = 'background: transparent'
-          pickTwo.style = 'background: transparent'
+          pickOne.classList.add('matched')
+          pickTwo.classList.add('matched')
           pickOne.innerHTML = ''
           pickTwo.innerHTML = ''
           pickOne = ''
@@ -88,9 +88,7 @@ const gameStart = (buttons) => {
           if (matchCount === 8) {
             playAgain.disabled = false
             playAgain.innerText = 'Play Again?'
-            buttons.forEach(
-              (box) => (box.style = 'border: none; background: transparent')
-            )
+            buttons.forEach((box) => box.classList.add('won'))
           }
         }
       }
