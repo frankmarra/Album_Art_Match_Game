@@ -30,19 +30,24 @@ body {
 .game-info {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 640px;
+  width: 600px;
 }
 .play-again-button {
   padding: 15px;
 }
+.album-art {
+  position: absolute;
+  margin: 49px 0 0 0;
+}
 
 .game-board {
-  width: 640px;
-  height: 640px;
+  width: 600px;
+  height: 600px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   border: 2px solid #36d860;
+  z-index: 2;
 }
 
 .game-button {

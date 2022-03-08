@@ -3,7 +3,8 @@ const strikes = document.querySelector('.strikes')
 const playAgain = document.querySelector('.play-again-button')
 const score = document.querySelector('.score-number')
 const strikeIcon = '<i class="fa-solid fa-xmark" style="font-size: 45px"></i>'
-
+const albums = JSON.parse(localStorage.getItem('albums'))
+const albumArt = document.querySelector('.album-art')
 //Main function of game
 const gameStart = (buttons) => {
   //Reset if there was a previous game
@@ -96,4 +97,18 @@ const gameStart = (buttons) => {
   })
 }
 
-playAgain.addEventListener('click', () => gameStart(gameButtons))
+playAgain.addEventListener('click', () => {
+  if (albumArt.childNodes.length > 0) {
+    albumArt.removeChild(albumArt.children[0])
+  }
+  let randomNumber = Math.floor(Math.random() * albums.length)
+  let gameAlbum = albums[randomNumber]
+  let gameArt = Object.values(gameAlbum).toString()
+  const imgMaker = document.createElement('img')
+  imgMaker.classList.add('game-art')
+  imgMaker.src = gameArt
+  const holdAgain = setTimeout(() => {
+    albumArt.appendChild(imgMaker)
+  }, 300)
+  gameStart(gameButtons)
+})
