@@ -12,26 +12,27 @@ const gameStart = (buttons) => {
   playAgain.disabled = true
   playAgain.innerText = 'Good Luck!'
   let gameArray = [
-    '<i class="fa-solid fa-music" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-music" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-compact-disc" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-compact-disc" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-headphones" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-headphones" style="font-size: 100px"></i>',
-    '<i class="fa-brands fa-spotify" style="font-size: 100px"></i>',
-    '<i class="fa-brands fa-spotify" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-guitar" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-guitar" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-play" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-play" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-drum" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-drum" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-microphone-lines" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-microphone-lines" style="font-size: 100px"></i>'
+    '<i class="fa-solid fa-music fa-beat" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-music fa-beat" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-compact-disc fa-spin" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-compact-disc fa-spin" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-headphones fa-beat" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-headphones fa-beat" style="font-size: 100px"></i>',
+    '<i class="fa-brands fa-spotify fa-spin" style="font-size: 100px"></i>',
+    '<i class="fa-brands fa-spotify fa-spin" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-guitar fa-flip" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-guitar fa-flip" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-play fa-flip" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-play fa-flip" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-drum fa-bounce" style="font-size: 100px; --fa-bounce-height: .5"></i>',
+    '<i class="fa-solid fa-drum fa-bounce" style="font-size: 100px; --fa-bounce-height: .5"></i>',
+    '<i class="fa-solid fa-microphone-lines fa-shake" style="font-size: 100px"></i>',
+    '<i class="fa-solid fa-microphone-lines fa-shake" style="font-size: 100px"></i>'
   ]
   let usedSymbol = []
   //populate board with random boxes and add event listeners to each box
   buttons.forEach((box) => {
+    box.style = 'background: black'
     box.disabled = false
     box.innerHTML = ''
     box.value = 0
@@ -58,8 +59,6 @@ const gameStart = (buttons) => {
               buttons.forEach((box) => (box.innerHTML = ''))
               playAgain.disabled = false
               playAgain.innerText = 'Play Again?'
-              // pickOne.innerHTML = ''
-              // pickTwo.innerHTML = ''
             } else {
               pickOne.disabled = false
               pickTwo.disabled = false
@@ -70,6 +69,10 @@ const gameStart = (buttons) => {
             }
           }, 500)
         } else if (pickOne.value === pickTwo.value) {
+          pickOne.style = 'background: transparent'
+          pickTwo.style = 'background: transparent'
+          pickOne.innerHTML = ''
+          pickTwo.innerHTML = ''
           pickOne = ''
           pickTwo = ''
           matchCount++
