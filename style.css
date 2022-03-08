@@ -9,24 +9,32 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 1fr 10%;
   justify-items: center;
+  background-color: rgb(97, 78, 78);
 }
 
 .title {
   grid-column: 1 / -1;
 }
+
+.game-wrapper {
+  width: 100%;
+  height: 100%;
+}
 .game-box {
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
 }
 
 .game-info {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 640px;
 }
 .play-again-button {
   padding: 15px;
 }
+
 .game-board {
   width: 640px;
   height: 640px;

@@ -56,4 +56,6 @@
 
 #### Font Icons: [Font Awesome](https://fontawesome.com/) | [Phosphor Icons](https://phosphoricons.com/)
 
+#### Font Awesome Animation Documentation: [Font Awesome](https://fontawesome.com/v6/docs/web/style/animate)
+
 #### API Documentation: [Spotify](https://developer.spotify.com/documentation/web-api/quick-start/)

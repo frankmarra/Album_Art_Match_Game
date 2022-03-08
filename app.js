@@ -1,6 +1,8 @@
 const gameButtons = document.querySelectorAll('.game-button')
 const strikes = document.querySelector('.strikes')
 const playAgain = document.querySelector('.play-again-button')
+const score = document.querySelector('.score-number')
+const strikeIcon = '<i class="fa-solid fa-xmark" style="font-size: 45px"></i>'
 
 //Main function of game
 const gameStart = (buttons) => {
@@ -9,6 +11,9 @@ const gameStart = (buttons) => {
   let pickOne = ''
   let pickTwo = ''
   let matchCount = 0
+  let playerScore = 0
+  let playerStrikes = 0
+  score.innerText = playerScore
   playAgain.disabled = true
   playAgain.innerText = 'Good Luck!'
   let gameArray = [
@@ -33,8 +38,9 @@ const gameStart = (buttons) => {
   //populate board with random boxes and add event listeners to each box
   buttons.forEach((box) => {
     box.style = 'background: black'
+    box.style = ''
     box.disabled = false
-    box.innerHTML = ''
+    box.innerHTML = 'border: 2px solid #36d860;'
     box.value = 0
     let randomSymbol = Math.floor(Math.random() * gameArray.length)
     //give HTML button a value.  Once button is clicked, this value will display in the inner text of the button.
@@ -53,8 +59,9 @@ const gameStart = (buttons) => {
         if (pickOne.value !== pickTwo.value) {
           //Add a delay so player can see wrong choice
           const holdPlease = setTimeout(() => {
-            strikes.innerText += 'X'
-            if (strikes.innerText === 'XXXX') {
+            strikes.innerHTML += `${strikeIcon}  `
+            playerStrikes++
+            if (playerStrikes === 6) {
               buttons.forEach((box) => (box.disabled = true))
               buttons.forEach((box) => (box.innerHTML = ''))
               playAgain.disabled = false
@@ -76,9 +83,14 @@ const gameStart = (buttons) => {
           pickOne = ''
           pickTwo = ''
           matchCount++
+          playerScore += 10
+          score.innerText = playerScore
           if (matchCount === 8) {
             playAgain.disabled = false
             playAgain.innerText = 'Play Again?'
+            buttons.forEach(
+              (box) => (box.style = 'border: none; background: transparent')
+            )
           }
         }
       }
