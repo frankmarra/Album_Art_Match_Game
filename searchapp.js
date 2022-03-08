@@ -1,4 +1,4 @@
-const SEARCH_DOMAIN = 'https://api.discogs.com/database/search?'
+const SEARCH_DOMAIN = 'https://api.discogs.com/database/search?per_page=20&'
 const API_KEY = 'NFFuiOkGpBVELhAZbuku'
 const SECRET_KEY = 'vuxkHlTcqAaVwlHKbSkgDqSXILszAMeW'
 const searchButton = document.querySelector('.search-button')
@@ -14,8 +14,6 @@ const albumArtList = (album) => {
       [title]: albumArt
     }
     albumArray.push(gameChoice)
-    // window.localStorage.setItem('albums', JSON.stringify(gameChoice))
-    // window.localStorage.setItem('art', albumArt)
     const wrapMaker = document.createElement('div')
     const divMaker = document.createElement('div')
     const titleMaker = document.createElement('h3')
@@ -34,16 +32,15 @@ const albumArtList = (album) => {
 
 //Search page functions
 searchButton.addEventListener('click', async () => {
-  localStorage.removeItem('albums')
+  window.localStorage.clear()
+  albumArray.length = 0
   const albums = document.querySelectorAll('.album')
   for (let i = 0; i < albums.length; i++) {
     albums[i].remove()
-    // localStorage.removeItem('title')
-    // localStorage.removeItem('art')
   }
   let genreSearch = genreName.value
   let response = await axios.get(
-    `${SEARCH_DOMAIN}artist=${genreSearch}&key=${API_KEY}&secret=${SECRET_KEY}`
+    `${SEARCH_DOMAIN}label=${genreSearch}&key=${API_KEY}&secret=${SECRET_KEY}`
   )
 
   let album = response.data.results

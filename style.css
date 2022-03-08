@@ -38,6 +38,13 @@ body {
 .album-art {
   position: absolute;
   margin: 49px 0 0 0;
+  height: 600px;
+  width: 600px;
+}
+
+.album-art img {
+  height: 100%;
+  width: 100%;
 }
 
 .game-board {
