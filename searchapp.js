@@ -1,4 +1,5 @@
-const SEARCH_DOMAIN = 'https://api.discogs.com/database/search?per_page=20&'
+const SEARCH_DOMAIN =
+  'https://api.discogs.com/database/search?page=1&per_page=20&'
 const API_KEY = 'NFFuiOkGpBVELhAZbuku'
 const SECRET_KEY = 'vuxkHlTcqAaVwlHKbSkgDqSXILszAMeW'
 const searchButton = document.querySelector('.search-button')
@@ -41,7 +42,7 @@ searchButton.addEventListener('click', async () => {
   }
   let genreSearch = genreName.value
   let response = await axios.get(
-    `${SEARCH_DOMAIN}style=${genreSearch}&key=${API_KEY}&secret=${SECRET_KEY}`
+    `${SEARCH_DOMAIN}label=${genreSearch}&key=${API_KEY}&secret=${SECRET_KEY}`
   )
 
   let album = response.data.results

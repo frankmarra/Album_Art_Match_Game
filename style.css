@@ -7,6 +7,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 nav {
+  grid-column: 1 / -1;
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
@@ -25,6 +26,7 @@ nav a {
 }
 .game-page {
   display: grid;
+  grid-template-columns: 6fr 4fr;
   grid-template-rows: 7% 1fr;
   justify-items: center;
   background-color: #3d3c52;
@@ -33,7 +35,7 @@ nav a {
 
 .game-wrapper {
   margin-top: 3vh;
-  width: 100vw;
+  width: 100%;
   height: 100%;
 }
 .game-box {
@@ -122,6 +124,22 @@ nav a {
 .score-number {
   width: 100%;
   text-align: right;
+}
+
+.art-choices {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+.art-choice-box {
+  display: flex;
+  flex-flow: column-reverse nowrap;
+  width: 100%;
+}
+.art-choice-button {
+  height: 25%;
+  width: 25%;
 }
 @media (max-width: 650px) {
   nav {
