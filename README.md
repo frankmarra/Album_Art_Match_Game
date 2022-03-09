@@ -10,9 +10,11 @@
 
 ## Description:
 
-#### The Album Art Match Game is a new take on an old idea. You, the player, are presented with a grid of boxes each containing a music related symbol. Your goal is to find the pairs of boxes containing the same symbols. This will result in the boxes being cleared from the board, and revealing part of an album cover. Clear all of the boxes to see the full album art! Be wary, though, as you will only have six incorrect guesses until the game is over!
+#### Record Reveal is a new take on an old idea. You, the player, are presented with a grid of boxes each containing a music related symbol. Your goal is to find the pairs of boxes containing the same symbols. This will result in the boxes being cleared from the board, and revealing part of an album cover. Clear all of the boxes to see the full album art! Be wary, though, as you will only have six incorrect guesses until the game is over!
 
-#### The album covers are all from a specific genre of music. The game defaults to a set of preprogrammed random genres, however you can go to the search page to enter in a genre of your choice. When you search, you will also have a chance to see the album covers you will be playing with.
+#### The album covers will all be from a genre that you choose on the search Page. When you search, you will also have a chance to see the album covers you will be playing with.
+
+#### To get started, click on the "Search" link in the top right of the screen. This will bring you to the search page. Type in a genre, and then click on the "Game" link. Then all thats left is to hit "Let's Play!". Try and get a high score, and have fun!
 
 ---
 
