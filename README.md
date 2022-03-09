@@ -56,3 +56,5 @@
 #### API Documentation: [Discogs](https://www.discogs.com/developers#page:home,header:home-pagination)
 
 #### Local Storage info: [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) | [JavaScript Tutorial](https://www.javascripttutorial.net/web-apis/javascript-localstorage/)
+
+#### Color Choice: [Adobe Color](https://color.adobe.com)

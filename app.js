@@ -2,7 +2,7 @@ const gameButtons = document.querySelectorAll('.game-button')
 const strikes = document.querySelector('.strikes')
 const playAgain = document.querySelector('.play-again-button')
 const score = document.querySelector('.score-number')
-const strikeIcon = '<i class="fa-solid fa-xmark" style="font-size: 45px"></i>'
+const strikeIcon = '<i class="fa-solid fa-xmark" style="font-size: 40px"></i>'
 const albums = JSON.parse(localStorage.getItem('albums'))
 const albumArt = document.querySelector('.album-art')
 //Main function of game
