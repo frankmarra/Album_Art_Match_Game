@@ -10,16 +10,18 @@
   <script defer src="./app.js"></script>
   <script src="https://kit.fontawesome.com/ae0d597aae.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div class="game-page">
     <nav>
-    <p>Record Reveal</p>
-    <div>
-      <a href="./game.html">Game</a>
-      <a href="./search.html">Search</a>
-      <a href="./index.html">Info</a>
-    </div>
+      <p>Record Reveal</p>
+      <div>
+        <a href="./game.html">Game</a>
+        <!-- <a href="./search.html">Search</a> -->
+        <a href="./index.html">Info</a>
+      </div>
     </nav>
+
     <div class="game-wrapper">
       <div class="game-box">
         <div class="game-info">
@@ -30,40 +32,47 @@
             <div class="score-number">0</div>
           </div>
         </div>
+
         <div class="album-art"></div>
         <div class="game-board">
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
+          <button type="button" class="game-button"></button>
         </div>
+
       </div>
+
     </div>
-    <div class="art-choice-box">
-      <div class="art-choices">
-      <button class="art-choice-button">Rhymesayers</button>
-      <button class="art-choice-button">Sargent House</button>
-      <button class="art-choice-button">ANTI</button>
-      <button class="art-choice-button">Mystery Circles</button>
-      <button class="art-choice-button">Desoto</button>
-      <button class="art-choice-button">Merge</button>
-      <button class="art-choice-button">Epitaph</button>
-      <button class="art-choice-button">Dischord</button>
+
+    <div class="art-section">
+      <div class="art-choice-box">
+        <div class="current-art-choice"></div>
+        <div class="current-album-display"></div>
+        <div class="art-choices">
+          <button type="button" class="art-choice-button" id="rhymesayers">Rhymesayers</button>
+          <button type="button" class="art-choice-button" id="sargent-house">Sargent House</button>
+          <button type="button" class="art-choice-button" id="anti">ANTI</button>
+          <button type="button" class="art-choice-button" id="mystery-circles">Mystery Circles</button>
+          <button type="button" class="art-choice-button" id="desoto">Desoto</button>
+          <button type="button" class="art-choice-button" id="merge">Merge</button>
+          <button type="button" class="art-choice-button" id="epitaph">Epitaph</button>
+          <button type="button" class="art-choice-button" id="dischord">Dischord</button>
+        </div>
+      </div>  
     </div>
-    <div class="current-art-choice"></div>
-  </div>
   </div>
 </body>
 </html>

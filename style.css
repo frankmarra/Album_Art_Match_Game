@@ -26,8 +26,8 @@ nav a {
 }
 .game-page {
   display: grid;
-  grid-template-columns: 6fr 4fr;
-  grid-template-rows: 7% 1fr;
+  grid-template-columns: 5fr 5fr;
+  grid-template-rows: 7% 1fr 7%;
   justify-items: center;
   background-color: #3d3c52;
   height: 100vh;
@@ -52,7 +52,8 @@ nav a {
   justify-items: center;
   align-items: center;
 }
-.play-again-button {
+.play-again-button,
+.art-choice-button {
   padding: 10px 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -94,6 +95,8 @@ nav a {
   border: solid #1f1f26;
   background: #333259;
   transition: 0.3s;
+  height: 100%;
+  width: 100%;
 }
 .matched {
   background: transparent;
@@ -132,14 +135,31 @@ nav a {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(4, 1fr);
 }
+.art-section {
+  margin-top: 3vh;
+  width: 100%;
+  height: 100%;
+}
 .art-choice-box {
   display: flex;
-  flex-flow: column-reverse nowrap;
+  flex-flow: column nowrap;
+  /* height: 100%;
   width: 100%;
+  margin-bottom: 15%; */
 }
 .art-choice-button {
-  height: 25%;
-  width: 25%;
+  margin: 4%;
+}
+.current-album-display {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.current-art-choice {
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 @media (max-width: 650px) {
   nav {
