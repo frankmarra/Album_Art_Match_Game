@@ -92,13 +92,13 @@ nav a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  border: 2px solid #1f1f26;
+  border: solid #1f1f26;
   z-index: 2;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.7);
 }
 
 .game-button {
-  border: 2px solid #1f1f26;
+  border: solid #1f1f26;
   background: #333259;
   transition: 0.3s;
   /* height: 150px;
@@ -150,14 +150,14 @@ nav a {
   }
 
   .fa-xmark {
-    font-size: 20px;
+    font-size: 18px;
   }
   .album-art {
     height: 300px;
     width: 300px;
   }
   .game-button {
-    border: 1px solid #1f1f26;
+    border: solid #1f1f26;
     /* height: 75px;
     width: 75px; */
   }

@@ -6,6 +6,7 @@ const strikeIcon = '<i class="fa-solid fa-xmark"></i>'
 const albums = JSON.parse(localStorage.getItem('albums'))
 const albumArt = document.querySelector('.album-art')
 const albumTitle = document.querySelector('.album-title')
+let totalScore = 0
 //Main function of game
 const gameStart = (buttons) => {
   //Reset if there was a previous game
@@ -13,8 +14,9 @@ const gameStart = (buttons) => {
   let pickOne = ''
   let pickTwo = ''
   let matchCount = 0
-  let playerScore = 0
+  let playerScore = totalScore
   let playerStrikes = 0
+  let albumCount = 0
   score.innerText = playerScore
   playAgain.disabled = true
   playAgain.innerText = 'Good Luck!'
@@ -59,15 +61,18 @@ const gameStart = (buttons) => {
         box.innerHTML = box.value
         pickTwo.disabled = true
         if (pickOne.value !== pickTwo.value) {
+          playerStrikes++
+          strikes.innerHTML += `${strikeIcon}  `
+          playerScore -= 5
+          score.innerText = playerScore
           //Add a delay so player can see wrong choice
           const holdPlease = setTimeout(() => {
-            strikes.innerHTML += `${strikeIcon}  `
-            playerStrikes++
             if (playerStrikes === 6) {
               buttons.forEach((box) => (box.disabled = true))
               buttons.forEach((box) => (box.innerHTML = ''))
               playAgain.disabled = false
               playAgain.innerText = 'Play Again?'
+              totalScore = 0
             } else {
               pickOne.disabled = false
               pickTwo.disabled = false
@@ -89,8 +94,12 @@ const gameStart = (buttons) => {
           score.innerText = playerScore
           if (matchCount === 8) {
             playAgain.disabled = false
-            playAgain.innerText = 'Play Again?'
+            playAgain.innerText = 'Next Album!'
             buttons.forEach((box) => box.classList.add('won'))
+            playerScore += 50
+            score.innerText = playerScore
+            totalScore = playerScore
+            albumCount++
           }
         }
       }
