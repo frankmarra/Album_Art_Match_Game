@@ -6,6 +6,7 @@ const genreName = document.getElementById('search-input')
 const searchResults = document.querySelector('.search-results')
 let albumArray = []
 
+//Search page function
 const albumArtList = (album) => {
   album.forEach((alb) => {
     let title = alb.title
@@ -30,7 +31,7 @@ const albumArtList = (album) => {
   window.localStorage.setItem('albums', JSON.stringify(albumArray))
 }
 
-//Search page functions
+//Search page event listener
 searchButton.addEventListener('click', async () => {
   window.localStorage.clear()
   albumArray.length = 0

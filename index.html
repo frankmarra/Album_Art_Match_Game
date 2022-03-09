@@ -4,56 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Album Art Match Game</title>
+  <title>Artwork Search</title>
   <link href="./style.css" rel="stylesheet">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script defer src="./app.js"></script>
+  <script defer src="./searchapp.js"></script>
   <script src="https://kit.fontawesome.com/ae0d597aae.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="game-page">
+  <div class="search-page">
     <nav>
-    <p>Album Art Matching Game</p>
-    <div>
-      <a href="./index.html">Game</a>
-      <a href="./search.html">Search</a>
-    </div>
-    </nav>
-    <div class="game-wrapper">
-      <div class="game-box">
-        <div class="game-info">
-          
-          <div class="strikes"></div>
-          
-          <div class="play-again"><button class="play-again-button">Let's Play!</button></div>
-          <div class="score-box">
-            <div class="score-text">Score:</div>
-            <div class="score-number">0</div>
-          </div>
-        </div>
-        <div class="album-art"></div>
-        <div class="game-board">
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-          <button class="game-button"></button>
-        </div>
-        
+      <p>Album Art Matching Game</p>
+      <div>
+        <a href="./index.html">Game</a>
+        <a href="./search.html">Search</a>
       </div>
+      </nav>
+      <div class="instructions">Enter a genre into the search bar and click on search.  This will show you the twenty album covers you will be playing the game with.  If you are happy with your selection, click the "Game" link to go to the game page and begin playing!</div>
+    <div class="search-bar">
+      <input type="text" id="search-input">
+      <button type="button" class="search-button">search</button>
     </div>
-    <footer></footer>
+    <div class="search-results"></div>
   </div>
 </body>
 </html>

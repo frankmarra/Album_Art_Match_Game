@@ -5,6 +5,7 @@ const score = document.querySelector('.score-number')
 const strikeIcon = '<i class="fa-solid fa-xmark" style="font-size: 40px"></i>'
 const albums = JSON.parse(localStorage.getItem('albums'))
 const albumArt = document.querySelector('.album-art')
+const albumTitle = document.querySelector('.album-title')
 //Main function of game
 const gameStart = (buttons) => {
   //Reset if there was a previous game
@@ -103,6 +104,7 @@ playAgain.addEventListener('click', () => {
   }
   let randomNumber = Math.floor(Math.random() * albums.length)
   let gameAlbum = albums[randomNumber]
+  let albumTitleName = Object.keys(gameAlbum).toString()
   let gameArt = Object.values(gameAlbum).toString()
   const imgMaker = document.createElement('img')
   imgMaker.classList.add('game-art')
