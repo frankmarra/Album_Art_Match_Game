@@ -19,22 +19,22 @@ const gameStart = (buttons) => {
   playAgain.disabled = true
   playAgain.innerText = 'Good Luck!'
   let gameArray = [
-    '<i class="fa-solid fa-music fa-beat" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-music fa-beat" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-compact-disc fa-spin" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-compact-disc fa-spin" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-headphones fa-beat" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-headphones fa-beat" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-volume-high fa-flip" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-volume-high fa-flip" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-guitar fa-flip" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-guitar fa-flip" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-play fa-flip" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-play fa-flip" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-drum fa-bounce" style="font-size: 100px; --fa-bounce-height: .5"></i>',
-    '<i class="fa-solid fa-drum fa-bounce" style="font-size: 100px; --fa-bounce-height: .5"></i>',
-    '<i class="fa-solid fa-microphone-lines fa-shake" style="font-size: 100px"></i>',
-    '<i class="fa-solid fa-microphone-lines fa-shake" style="font-size: 100px"></i>'
+    '<i class="fa-solid fa-music fa-beat"></i>',
+    '<i class="fa-solid fa-music fa-beat"></i>',
+    '<i class="fa-solid fa-compact-disc fa-spin"></i>',
+    '<i class="fa-solid fa-compact-disc fa-spin"></i>',
+    '<i class="fa-solid fa-headphones fa-beat"></i>',
+    '<i class="fa-solid fa-headphones fa-beat"></i>',
+    '<i class="fa-solid fa-volume-high fa-flip"></i>',
+    '<i class="fa-solid fa-volume-high fa-flip"></i>',
+    '<i class="fa-solid fa-guitar fa-flip"></i>',
+    '<i class="fa-solid fa-guitar fa-flip"></i>',
+    '<i class="fa-solid fa-play fa-flip"></i>',
+    '<i class="fa-solid fa-play fa-flip"></i>',
+    '<i class="fa-solid fa-drum fa-bounce" style="--fa-bounce-height: .5"></i>',
+    '<i class="fa-solid fa-drum fa-bounce" style="--fa-bounce-height: .5"></i>',
+    '<i class="fa-solid fa-microphone-lines fa-shake"></i>',
+    '<i class="fa-solid fa-microphone-lines fa-shake"></i>'
   ]
   let usedSymbol = []
   //populate board with random boxes and add event listeners to each box

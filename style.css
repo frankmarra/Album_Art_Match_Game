@@ -109,6 +109,7 @@ nav,
 }
 .fa-solid,
 .fa-brands {
+  font-size: 100px;
   color: #4369d9;
 }
 
@@ -119,7 +120,32 @@ nav,
   font-family: Arial, Helvetica, sans-serif;
   color: #4369d9;
 }
+@media (max-width: 650px) {
+  .nav {
+    font-size: 0.8rem;
+  }
+  .play-again-button {
+    font-size: 0.8rem;
+    width: 25vmin;
+  }
 
+  .fa-solid {
+    font-size: 45px;
+  }
+  .album-art {
+    height: 300px;
+    width: 300px;
+  }
+
+  .game-board {
+    width: 300px;
+    height: 300px;
+  }
+
+  .score-box {
+    font-size: 20px;
+  }
+}
 /* Search page style */
 .search-page {
   display: grid;
