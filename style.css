@@ -25,21 +25,21 @@ nav a {
 }
 .game-page {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 7% 1fr 7%;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-rows: 7% 1fr;
   justify-items: center;
   background-color: #3d3c52;
   height: 100vh;
 }
 
-nav,
+/* nav,
 .game-wrapper {
   grid-column: 1 / -1;
-}
+} */
 
 .game-wrapper {
   margin-top: 3vh;
-  width: 100%;
+  width: 100vw;
   height: 100%;
 }
 .game-box {
@@ -64,7 +64,7 @@ nav,
   border-radius: 20px;
   border: 3px solid;
   transition: 0.3s;
-  width: 25vmin;
+  /* width: 25vmin; */
 }
 
 .play-again-button:disabled {
@@ -85,6 +85,8 @@ nav,
 }
 
 .game-board {
+  /* margin: 0;
+  padding: 0; */
   width: 600px;
   height: 600px;
   display: grid;
@@ -99,6 +101,8 @@ nav,
   border: 2px solid #1f1f26;
   background: #333259;
   transition: 0.3s;
+  /* height: 150px;
+  width: 150px; */
 }
 .matched {
   background: transparent;
@@ -112,13 +116,23 @@ nav,
   font-size: 100px;
   color: #4369d9;
 }
-
+.fa-xmark {
+  font-size: 40px;
+}
 .score-box {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   color: #4369d9;
+  width: 100%;
+  height: 100%;
+}
+.score-number {
+  width: 100%;
+  text-align: right;
 }
 @media (max-width: 650px) {
   nav {
@@ -126,7 +140,7 @@ nav,
   }
   .play-again-button {
     font-size: 0.6rem;
-    width: 25vmin;
+    /* width: 25vmin; */
   }
   .game-info {
     width: 300px;
@@ -142,7 +156,11 @@ nav,
     height: 300px;
     width: 300px;
   }
-
+  .game-button {
+    border: 1px solid #1f1f26;
+    /* height: 75px;
+    width: 75px; */
+  }
   .game-board {
     width: 300px;
     height: 300px;
@@ -150,6 +168,9 @@ nav,
 
   .score-box {
     font-size: 20px;
+  }
+  .instructions {
+    font-size: 0.7rem;
   }
 }
 /* Search page style */
@@ -201,8 +222,6 @@ nav,
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* padding: 10px;
-  margin: 10px; */
 }
 
 .search-results {
