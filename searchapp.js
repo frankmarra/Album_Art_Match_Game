@@ -40,9 +40,10 @@ searchButton.addEventListener('click', async () => {
   }
   let genreSearch = genreName.value
   let response = await axios.get(
-    `${SEARCH_DOMAIN}label=${genreSearch}&key=${API_KEY}&secret=${SECRET_KEY}`
+    `${SEARCH_DOMAIN}style=${genreSearch}&key=${API_KEY}&secret=${SECRET_KEY}`
   )
 
   let album = response.data.results
+  console.log(album)
   albumArtList(album)
 })

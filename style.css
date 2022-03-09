@@ -7,13 +7,15 @@ body {
 }
 .game-page {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 10% 1fr 10%;
   justify-items: center;
-  background-color: rgb(97, 78, 78);
+  background-color: #3d3c52;
+  height: 100vh;
 }
 
-.title {
+.title,
+.game-wrapper {
   grid-column: 1 / -1;
 }
 
@@ -31,13 +33,24 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 600px;
+  justify-items: center;
 }
 .play-again-button {
-  padding: 15px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #4369d9;
+  border-radius: 20px;
+  border: none;
+}
+
+.play-again-button:disabled {
+  color: black;
 }
 .album-art {
   position: absolute;
-  margin: 49px 0 0 0;
+  margin: 63px 0 0 0;
   height: 600px;
   width: 600px;
 }
@@ -53,13 +66,14 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  border: 2px solid #36d860;
+  border: 2px solid #1f1f26;
   z-index: 2;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.7);
 }
 
 .game-button {
-  border: 2px solid #36d860;
-  background: black;
+  border: 2px solid #1f1f26;
+  background: #333259;
   transition: 0.3s;
 }
 .matched {
@@ -71,19 +85,23 @@ body {
 }
 .fa-solid,
 .fa-brands {
-  color: #36d860;
+  color: #4369d9;
 }
-.score-and-questions {
-  width: 100%;
-}
+
 .score-box {
   display: flex;
   flex-flow: row nowrap;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #4369d9;
 }
 
+/* Search page style */
 .search-page {
   text-align: center;
-  background-color: bisque;
+  justify-items: center;
+  background-color: #5c6273;
+  height: 100vh;
 }
 
 #search-input {
@@ -111,9 +129,9 @@ body {
   margin: 10px;
 }
 
-.serach-results {
+.search-results {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .album {
@@ -130,6 +148,6 @@ body {
 }
 
 .album h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: underline;
 }
