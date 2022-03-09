@@ -54,9 +54,9 @@ nav,
   width: 600px;
   height: 64px;
   justify-items: center;
+  align-items: center;
 }
 .play-again-button {
-  margin-bottom: 20px;
   padding: 10px 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -121,16 +121,22 @@ nav,
   color: #4369d9;
 }
 @media (max-width: 650px) {
-  .nav {
-    font-size: 0.8rem;
+  nav {
+    font-size: 0.9rem;
   }
   .play-again-button {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     width: 25vmin;
   }
-
+  .game-info {
+    width: 300px;
+  }
   .fa-solid {
-    font-size: 45px;
+    font-size: 40px;
+  }
+
+  .fa-xmark {
+    font-size: 20px;
   }
   .album-art {
     height: 300px;
