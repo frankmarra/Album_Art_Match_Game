@@ -103,10 +103,7 @@ body {
 .matched {
   background: transparent;
 }
-.won {
-  border: none;
-  background: transparent;
-}
+
 .fa-solid {
   font-size: 100px;
   color: #4369d9;
@@ -265,4 +262,9 @@ body {
 
 .fa-ghost-day {
   color: black;
+}
+
+.won {
+  border: none;
+  background: transparent;
 }

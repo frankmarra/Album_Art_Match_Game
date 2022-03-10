@@ -28,8 +28,9 @@ const epitaph = document.getElementById('epitaph')
 const dischord = document.getElementById('dischord')
 
 let albumArray = []
-
+let playerScore = 0
 let totalScore = 0
+let playerStrikes = 0
 
 //Search page function
 const albumArtList = (album) => {
@@ -41,7 +42,6 @@ const albumArtList = (album) => {
     }
     albumArray.push(gameChoice)
   })
-  console.log(albumArray)
 }
 
 const getAlbums = async () => {
@@ -153,10 +153,9 @@ const gameStart = (buttons) => {
   let pickOne = ''
   let pickTwo = ''
   let matchCount = 0
-  let playerScore = totalScore
-  let playerStrikes = 0
-  let albumCount = 0
-  score.innerText = playerScore
+  playerScore = totalScore
+  playerStrikes = 0
+  //score.innerText = playerScore
   playAgain.disabled = true
   playAgain.innerText = 'Good Luck!'
   let gameArray = [
@@ -180,6 +179,68 @@ const gameStart = (buttons) => {
   let usedSymbol = []
   //populate board with random boxes and add event listeners to each box
   buttons.forEach((box) => {
+    // const gameLogic = () => {
+    //   if (pickOne === '') {
+    //     pickOne = box
+    //     box.innerHTML = box.value
+    //     pickOne.disabled = true
+    //   } else if (pickOne !== '' && pickTwo === '') {
+    //     pickTwo = box
+    //     box.innerHTML = box.value
+    //     pickTwo.disabled = true
+    //     if (pickOne.value !== pickTwo.value) {
+    //       playerStrikes++
+    //       strikes.innerHTML = strikes.innerHTML + `${strikeIcon}  `
+    //       playerScore -= 5
+    //       score.innerText = playerScore
+    //       //Add a delay so player can see wrong choice
+    //       setTimeout(() => {
+    //         if (playerStrikes === 6) {
+    //           buttons.forEach((box) => (box.disabled = true))
+    //           buttons.forEach((box) => (box.innerHTML = ''))
+    //           playAgain.disabled = false
+    //           playAgain.innerText = 'Play Again?'
+    //           totalScore = 0
+    //           buttons.forEach((box) => {
+    //             console.log(box)
+    //             box.removeEventListener('click', gameLogic)
+    //           })
+    //         } else {
+    //           pickOne.disabled = false
+    //           pickTwo.disabled = false
+    //           pickOne.innerHTML = ''
+    //           pickTwo.innerHTML = ''
+    //           pickOne = ''
+    //           pickTwo = ''
+    //         }
+    //       }, 300)
+    //     } else if (pickOne.value === pickTwo.value) {
+    //       pickOne.classList.add('matched')
+    //       pickTwo.classList.add('matched')
+    //       pickOne.innerHTML = ''
+    //       pickTwo.innerHTML = ''
+    //       pickOne = ''
+    //       pickTwo = ''
+    //       matchCount++
+    //       playerScore += 10
+    //       score.innerText = playerScore
+    //       if (matchCount === 8) {
+    //         buttons.forEach((box) => (box.disabled = true))
+    //         buttons.forEach((box) => (box.innerHTML = ''))
+    //         buttons.forEach((box) => box.classList.add('won'))
+    //         choice()
+    //         playAgain.disabled = false
+    //         playAgain.innerText = 'Next Album!'
+
+    //         // buttons.forEach((box) =>
+    //         //   box.removeEventListener('click', gameLogic)
+    //         // )
+    //         // playerScore += 50
+    //         // score.innerText = playerScore
+    //         // totalScore = playerScore
+    //       }
+    //     }
+    //   }
     box.classList.remove('matched')
     box.classList.remove('won')
     box.disabled = false
@@ -190,6 +251,7 @@ const gameStart = (buttons) => {
     box.value = gameArray[randomSymbol]
     //Remove the current value from the array so it wont be used more than once.
     usedSymbol = gameArray.splice(randomSymbol, 1)
+    // box.addEventListener('click', gameLogic)
     box.addEventListener('click', () => {
       if (pickOne === '') {
         pickOne = box
@@ -200,27 +262,30 @@ const gameStart = (buttons) => {
         box.innerHTML = box.value
         pickTwo.disabled = true
         if (pickOne.value !== pickTwo.value) {
-          playerStrikes++
-          strikes.innerHTML += `${strikeIcon}  `
-          playerScore -= 5
-          score.innerText = playerScore
+          //playerStrikes++
+          //strikes.innerHTML = strikes.innerHTML + `${strikeIcon}  `
+          //playerScore -= 5
+          //score.innerText = playerScore
           //Add a delay so player can see wrong choice
-          const holdPlease = setTimeout(() => {
-            if (playerStrikes === 6) {
-              buttons.forEach((box) => (box.disabled = true))
-              buttons.forEach((box) => (box.innerHTML = ''))
-              playAgain.disabled = false
-              playAgain.innerText = 'Play Again?'
-              totalScore = 0
-            } else {
-              pickOne.disabled = false
-              pickTwo.disabled = false
-              pickOne.innerHTML = ''
-              pickTwo.innerHTML = ''
-              pickOne = ''
-              pickTwo = ''
-            }
-          }, 500)
+          // const holdPlease = async () => {
+          setTimeout(() => {
+            //if (playerStrikes === 6) {
+            //buttons.forEach((box) => (box.disabled = true))
+            //buttons.forEach((box) => (box.innerHTML = ''))
+            //playAgain.disabled = false
+            //playAgain.innerText = 'Play Again?'
+            //totalScore = 0
+            //} else {
+            pickOne.disabled = false
+            pickTwo.disabled = false
+            pickOne.innerHTML = ''
+            pickTwo.innerHTML = ''
+            pickOne = ''
+            pickTwo = ''
+            //}
+          }, 300)
+          // })
+          // holdPlease()
         } else if (pickOne.value === pickTwo.value) {
           pickOne.classList.add('matched')
           pickTwo.classList.add('matched')
@@ -229,16 +294,15 @@ const gameStart = (buttons) => {
           pickOne = ''
           pickTwo = ''
           matchCount++
-          playerScore += 10
-          score.innerText = playerScore
+          //playerScore += 10
+          //score.innerText = playerScore
           if (matchCount === 8) {
             playAgain.disabled = false
             playAgain.innerText = 'Next Album!'
             buttons.forEach((box) => box.classList.add('won'))
-            playerScore += 50
-            score.innerText = playerScore
-            totalScore = playerScore
-            albumCount++
+            //playerScore += 50
+            //score.innerText = playerScore
+            //totalScore = playerScore
           }
         }
       }
@@ -250,6 +314,7 @@ playAgain.addEventListener('click', () => {
   if (albumArt.childNodes.length > 0) {
     albumArt.removeChild(albumArt.children[0])
   }
+
   let randomNumber = Math.floor(Math.random() * albumArray.length)
   let gameAlbum = albumArray[randomNumber]
   let albumTitleName = Object.keys(gameAlbum).toString()
@@ -258,7 +323,8 @@ playAgain.addEventListener('click', () => {
   const imgMaker = document.createElement('img')
   imgMaker.classList.add('game-art')
   imgMaker.src = gameArt
-  const holdAgain = setTimeout(() => {
+  // const holdAgain =
+  setTimeout(() => {
     albumArt.appendChild(imgMaker)
   }, 300)
   gameStart(gameButtons)
