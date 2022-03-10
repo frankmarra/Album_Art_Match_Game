@@ -3,16 +3,14 @@ const strikes = document.querySelector('.strikes')
 const playAgain = document.querySelector('.play-again-button')
 const score = document.querySelector('.score-number')
 const strikeIcon = '<i class="fa-solid fa-xmark"></i>'
-// const albums = JSON.parse(localStorage.getItem('albums'))
 const albumArt = document.querySelector('.album-art')
-const albumTitle = document.querySelector('.album-title')
+const currentArtChoice = document.querySelector('.current-art-choice')
+const artMessage = 'Current art collection: '
+const currentAlbumChoice = document.querySelector('.current-album-display')
 //search page globals
 const SEARCH_DOMAIN = 'https://api.discogs.com/database/search?'
 const API_KEY = 'NFFuiOkGpBVELhAZbuku'
 const SECRET_KEY = 'vuxkHlTcqAaVwlHKbSkgDqSXILszAMeW'
-const searchButton = document.querySelector('.search-button')
-const genreName = document.getElementById('search-input')
-const searchResults = document.querySelector('.search-results')
 const rhymesayers = document.getElementById('rhymesayers')
 const sargentHouse = document.getElementById('sargent-house')
 const anti = document.getElementById('anti')
@@ -30,87 +28,117 @@ let totalScore = 0
 const albumArtList = (album) => {
   album.forEach((alb) => {
     let title = alb.title
-    let albumArt = alb.cover_image
+    let albumArtwork = alb.cover_image
     let gameChoice = {
-      [title]: albumArt
+      [title]: albumArtwork
     }
     albumArray.push(gameChoice)
   })
   console.log(albumArray)
 }
 
-//event listeners
-rhymesayers.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=13&per_page=20&label=rhymesayers&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-sargentHouse.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=3&per_page=20&label='sargent house'&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-anti.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=13&per_page=20&label=anti&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-mysteryCircles.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=3&per_page=20&label='mystery circles'&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-desoto.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=5&per_page=20&label=desoto&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-merge.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=9&per_page=20&label=merge&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-epitaph.addEventListener('click', async () => {
-  albumArray.length = 0
-  let response = await axios.get(
-    `${SEARCH_DOMAIN}page=10&per_page=20&label=epitaph&key=${API_KEY}&secret=${SECRET_KEY}`
-  )
-  let album = response.data.results
-  albumArtList(album)
-})
-
-dischord.addEventListener('click', async () => {
-  albumArray.length = 0
+const getAlbums = async () => {
   let response = await axios.get(
     `${SEARCH_DOMAIN}page=4&per_page=20&label=dischord&key=${API_KEY}&secret=${SECRET_KEY}`
   )
   let album = response.data.results
   albumArtList(album)
-})
+  response = await axios.get(
+    `${SEARCH_DOMAIN}page=3&per_page=20&label='sargent house'&key=${API_KEY}&secret=${SECRET_KEY}`
+  )
+  album = response.data.results
+  albumArtList(album)
+  response = await axios.get(
+    `${SEARCH_DOMAIN}page=5&per_page=20&label=desoto&key=${API_KEY}&secret=${SECRET_KEY}`
+  )
+  album = response.data.results
+  albumArtList(album)
+  response = await axios.get(
+    `${SEARCH_DOMAIN}page=3&per_page=20&label='mystery circles'&key=${API_KEY}&secret=${SECRET_KEY}`
+  )
+  album = response.data.results
+  albumArtList(album)
+}
+//event listeners
+// rhymesayers.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+// `${SEARCH_DOMAIN}page=13&per_page=20&label=rhymesayers&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Rhymesayers`
+//   albumArtList(album)
+// })
+
+// sargentHouse.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=3&per_page=20&label='sargent house'&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Sargent House`
+//   albumArtList(album)
+// })
+
+// anti.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=13&per_page=20&label=anti&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}ANTI'`
+//   albumArtList(album)
+// })
+
+// mysteryCircles.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=3&per_page=20&label='mystery circles'&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Mystery Circles`
+//   albumArtList(album)
+// })
+
+// desoto.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=5&per_page=20&label=desoto&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Desoto`
+//   albumArtList(album)
+// })
+
+// merge.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=9&per_page=20&label=merge&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Merge`
+//   albumArtList(album)
+// })
+
+// epitaph.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=10&per_page=20&label=epitaph&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Epitaph`
+//   albumArtList(album)
+// })
+
+// dischord.addEventListener('click', async () => {
+//   albumArray.length = 0
+//   let response = await axios.get(
+//     `${SEARCH_DOMAIN}page=4&per_page=20&label=dischord&key=${API_KEY}&secret=${SECRET_KEY}`
+//   )
+//   let album = response.data.results
+//   currentArtChoice.innerText = `${artMessage}Dischord`
+//   albumArtList(album)
+// })
 //Main function of game
 const gameStart = (buttons) => {
   //Reset if there was a previous game
@@ -218,6 +246,7 @@ playAgain.addEventListener('click', () => {
   let randomNumber = Math.floor(Math.random() * albumArray.length)
   let gameAlbum = albumArray[randomNumber]
   let albumTitleName = Object.keys(gameAlbum).toString()
+  currentAlbumChoice.innerHTML = albumTitleName
   let gameArt = Object.values(gameAlbum).toString()
   const imgMaker = document.createElement('img')
   imgMaker.classList.add('game-art')
@@ -227,3 +256,6 @@ playAgain.addEventListener('click', () => {
   }, 300)
   gameStart(gameButtons)
 })
+
+getAlbums()
+console.log(albumArray)
