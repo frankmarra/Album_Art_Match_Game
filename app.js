@@ -142,7 +142,7 @@ const getAlbums = async () => {
 //Main function of game
 const gameStart = (buttons) => {
   //Reset if there was a previous game
-  strikes.innerText = ''
+  strikes.innerHTML = ''
   let pickOne = ''
   let pickTwo = ''
   let matchCount = 0
@@ -246,7 +246,7 @@ playAgain.addEventListener('click', () => {
   let randomNumber = Math.floor(Math.random() * albumArray.length)
   let gameAlbum = albumArray[randomNumber]
   let albumTitleName = Object.keys(gameAlbum).toString()
-  currentAlbumChoice.innerHTML = albumTitleName
+  // currentAlbumChoice.innerHTML = albumTitleName
   let gameArt = Object.values(gameAlbum).toString()
   const imgMaker = document.createElement('img')
   imgMaker.classList.add('game-art')
