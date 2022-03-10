@@ -7,7 +7,14 @@ const albumArt = document.querySelector('.album-art')
 const currentArtChoice = document.querySelector('.current-art-choice')
 const artMessage = 'Current art collection: '
 const currentAlbumChoice = document.querySelector('.current-album-display')
-//search page globals
+const dayNight = document.querySelector('.day-night')
+const nav = document.querySelector('nav')
+const gamePage = document.querySelector('.game-page')
+const gameBoard = document.querySelector('.game-board')
+const scoreBox = document.querySelector('.score-box')
+const dayIcon = document.querySelector('.fa-umbrella-beach')
+const nightIcon = document.querySelector('.fa-ghost')
+//search globals
 const SEARCH_DOMAIN = 'https://api.discogs.com/database/search?'
 const API_KEY = 'NFFuiOkGpBVELhAZbuku'
 const SECRET_KEY = 'vuxkHlTcqAaVwlHKbSkgDqSXILszAMeW'
@@ -255,6 +262,36 @@ playAgain.addEventListener('click', () => {
     albumArt.appendChild(imgMaker)
   }, 300)
   gameStart(gameButtons)
+})
+
+dayIcon.addEventListener('click', () => {
+  nav.classList.toggle('nav-day')
+  gamePage.classList.toggle('game-page-day')
+  playAgain.classList.toggle('play-again-button-day')
+  gameBoard.classList.toggle('game-board-day')
+  gameButtons.forEach((but) => {
+    but.classList.toggle('game-button-day')
+  })
+  scoreBox.classList.toggle('score-box-day')
+  nightIcon.classList.toggle('fa-ghost-day')
+  dayIcon.classList.toggle('fa-umbrella-beach-day')
+  dayIcon.disabled = true
+  nightIcon.disabled = false
+})
+
+nightIcon.addEventListener('click', () => {
+  nav.classList.toggle('nav-day')
+  gamePage.classList.toggle('game-page-day')
+  playAgain.classList.toggle('play-again-button-day')
+  gameBoard.classList.toggle('game-board-day')
+  gameButtons.forEach((but) => {
+    but.classList.toggle('game-button-day')
+  })
+  scoreBox.classList.toggle('score-box-day')
+  nightIcon.classList.toggle('fa-ghost-day')
+  dayIcon.classList.toggle('fa-umbrella-beach-day')
+  dayIcon.disabled = false
+  nightIcon.disabled = true
 })
 
 getAlbums()

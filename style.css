@@ -6,8 +6,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-nav {
-  /* grid-column: 1 / -1; */
+.nav-night {
   display: flex;
   flex-flow: row nowrap;
   width: 100%;
@@ -19,14 +18,18 @@ nav {
   color: #f2f2f2;
 }
 
-nav a {
+.nav-night a {
   color: #f2f2f2;
   text-decoration: none;
   margin: 0 0.5vw;
 }
+.day-night {
+  margin: 0 1vw;
+  height: 20px;
+  width: 40px;
+}
 .game-page {
   display: grid;
-  /* grid-template-columns: 5fr 5fr; */
   grid-template-rows: 7% 1fr 7%;
   justify-items: center;
   background-color: #3d3c52;
@@ -52,8 +55,7 @@ nav a {
   justify-items: center;
   align-items: center;
 }
-.play-again-button,
-.art-choice-button {
+.play-again-button {
   padding: 10px 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
@@ -105,8 +107,7 @@ nav a {
   border: none;
   background: transparent;
 }
-.fa-solid,
-.fa-brands {
+.fa-solid {
   font-size: 100px;
   color: #4369d9;
 }
@@ -129,45 +130,16 @@ nav a {
   text-align: right;
 }
 
-.art-choices {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  justify-items: center;
-}
-.art-section {
-  margin-top: 3vh;
-  width: 100%;
-  height: 100%;
-}
-.art-choice-box {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.art-choice-button {
-  margin: 4%;
-}
-.current-album-display {
-  height: 100%;
-  width: 100%;
-  text-align: center;
+.fa-ghost,
+.fa-umbrella-beach {
+  font-size: 1.4rem;
+  margin: 0 3vw;
 }
 
-.current-art-choice {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  color: #f2f2f2;
-  font-size: 3vw;
-  padding: 2% 0;
+.fa-umbrella-beach {
+  color: black;
 }
 
-.current-album-display {
-  text-align: center;
-  color: #f2f2f2;
-  font-size: 2rem;
-}
 @media (max-width: 650px) {
   nav {
     font-size: 0.9rem;
@@ -237,4 +209,60 @@ nav a {
 .game-play-info a {
   color: #f2f2f2;
   text-decoration: none;
+}
+
+/* Day Mode */
+.nav-night,
+.game-page,
+.game-board,
+.fa-solid,
+.score-box,
+.fa-sun,
+.fa-ghost {
+  transition: 0.3s;
+}
+.nav-day {
+  background-color: #f25835;
+  color: #f2e8dc;
+}
+
+.game-page-day {
+  background-color: #f1c4f2;
+}
+
+.play-again-button-day {
+  color: #d9a74a;
+  background-color: #f2e8dc;
+}
+
+.play-again-button-day:disabled {
+  color: #f2e8dc;
+  background-color: #d9a74a;
+  border: solid #a07627;
+  box-shadow: 0 2px 2px 3px rgba(217, 167, 74, 0.7);
+}
+
+.game-board-day {
+  border: solid #d9a74a;
+}
+
+.game-button-day {
+  border: solid #d9a74a;
+  background: #79baf2;
+}
+
+.fa-solid-day {
+  color: #d9a74a;
+}
+
+.score-box-day {
+  color: #d9a74a;
+}
+
+.fa-umbrella-beach-day {
+  color: #d9a74a;
+}
+
+.fa-ghost-day {
+  color: black;
 }
