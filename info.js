@@ -24,7 +24,7 @@ if (allGames === null) {
 
 for (let i = 0; i < allGames.length; i++) {
   let dateGame = document.createElement('td')
-  dateGame.innerHTML = `${allGames[i].month}/${allGames[i].date}/${allGames[i].year} Game - ${allGames[i].game['game-number']}`
+  dateGame.innerHTML = `${allGames[i].month}/${allGames[i].date}/${allGames[i].year}`
   let gameScore = document.createElement('td')
   gameScore.innerHTML = allGames[i].game['player-score']
   let gameTries = document.createElement('td')
