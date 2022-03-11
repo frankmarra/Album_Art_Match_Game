@@ -60,7 +60,8 @@ const getAlbums = async () => {
 }
 
 const gameLogic = (evt) => {
-  let gameBox = evt.path[0]
+  console.log(evt)
+  let gameBox = evt.srcElement
   if (pickOne === '') {
     pickOne = gameBox
     gameBox.innerHTML = gameBox.value
@@ -102,6 +103,11 @@ const gameLogic = (evt) => {
         playAgain.innerText = 'Next Album!'
         playerScore += 50
         score.innerText = playerScore
+        const stats = {
+          tries: playerStrikes,
+          score: playerScore
+        }
+        window.localStorage.setItem('player-stats', JSON.stringify(stats))
       }
     }
   }

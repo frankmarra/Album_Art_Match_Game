@@ -1,10 +1,10 @@
-# Album Art Match Game
+# Record Reveal
 
 ## Date: 3/6/2022
 
 ### By: Frank Marra
 
-#### [Trello Board](https://trello.com/b/ZVDGahYn/gamusicmatchgame) | [GitHub Repo](https://github.com/frankmarra/Album_Art_Match_Game) | [LinkedIn](www.linkedin.com/in/frank-marra-5b5857a3)
+#### [Trello Board](https://trello.com/b/ZVDGahYn/gamusicmatchgame) | [GitHub Repo](https://github.com/frankmarra/Album_Art_Match_Game) | [Game Site](franksmatchgame.surge.sh)
 
 ---
 
@@ -31,16 +31,18 @@
 
 #### After reading the instructions on the "Info page, either click the link that says "click here to play", or click on the "Game" link in the nav bar.
 
-#### This will take you to the game screen, where all you have to do is click the "Let's Play!" button and start matching. After clearing all of the boxes, the album artist and title will be displayed with the full artwork. You can also now click on the "Next Album" button to play again. Thats all for now.
+#### This will take you to the game screen, where all you have to do is click the "Let's Play!" button and start matching. After clearing all of the boxes, the album artist and title will be displayed with the full artwork. You can also now click on the "Next Album" button to play again.
+
+#### Each correct guess will get you 10 points, while each wrong guess will take away 5. See if you can get a high score in as low amount of tries as possible!
 
 #### More features will be added to the game as time allows. Some future implementations include:
 
 - Player score tracking
-  - Players will get points for each correct guess, and lose points for each wrong guess.
-  - The app will also track how many tries it takes to clear the board.
   - On the "Info" page, your top 5 scores will be displayed
 - Add a player timer
   - This will track your time and give you extra points based on how quickly you solve the puzzle.
+- Have a more curated selection of album artwork to play with.
+  - Link up to playlists to use their art.
 - And more!
 
 #### I hope you enjoy playing this game, and maybe even finding some new music to listen to!
