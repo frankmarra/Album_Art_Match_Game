@@ -1,5 +1,5 @@
 const gameButtons = document.querySelectorAll('.game-button')
-const strikes = document.querySelector('.strikes')
+const strikes = document.querySelector('.strike-number')
 const playAgain = document.querySelector('.play-again-button')
 const score = document.querySelector('.score-number')
 const strikeIcon = '<i class="fa-solid fa-xmark"></i>'
@@ -65,12 +65,12 @@ const gameLogic = (evt) => {
     gameBox.innerHTML = gameBox.value
     pickOne.disabled = true
   } else if (pickOne !== '' && pickTwo === '') {
+    playerStrikes++
+    strikes.innerHTML = playerStrikes
     pickTwo = gameBox
     gameBox.innerHTML = gameBox.value
     pickTwo.disabled = true
     if (pickOne.value !== pickTwo.value) {
-      playerStrikes++
-      strikes.innerHTML = playerStrikes
       playerScore -= 5
       score.innerText = playerScore
       //Add a delay so player can see wrong choice
@@ -108,12 +108,12 @@ const gameLogic = (evt) => {
 //Main function of game
 const gameStart = (buttons) => {
   //Reset if there was a previous game
-  strikes.innerHTML = ''
   pickOne = ''
   pickTwo = ''
   matchCount = 0
   playerScore = 0
   playerStrikes = 0
+  strikes.innerText = 0
   score.innerText = playerScore
   playAgain.disabled = true
   playAgain.innerText = 'Good Luck!'
@@ -151,61 +151,6 @@ const gameStart = (buttons) => {
     //Remove existing event listeners, and add new event listeners to the boxes.
     box.removeEventListener('click', gameLogic)
     box.addEventListener('click', gameLogic)
-
-    // box.addEventListener('click', () => {
-    //   if (pickOne === '') {
-    //     pickOne = box
-    //     box.innerHTML = box.value
-    //     pickOne.disabled = true
-    //   } else if (pickOne !== '' && pickTwo === '') {
-    //     pickTwo = box
-    //     box.innerHTML = box.value
-    //     pickTwo.disabled = true
-    //     if (pickOne.value !== pickTwo.value) {
-    //       //playerStrikes++
-    //       //strikes.innerHTML = strikes.innerHTML + `${strikeIcon}  `
-    //       //playerScore -= 5
-    //       //score.innerText = playerScore
-    //       //Add a delay so player can see wrong choice
-    //       setTimeout(() => {
-    //         //if (playerStrikes === 6) {
-    //         //buttons.forEach((box) => (box.disabled = true))
-    //         //buttons.forEach((box) => (box.innerHTML = ''))
-    //         //playAgain.disabled = false
-    //         //playAgain.innerText = 'Play Again?'
-    //         //totalScore = 0
-    //         //} else {
-    //         pickOne.disabled = false
-    //         pickTwo.disabled = false
-    //         pickOne.innerHTML = ''
-    //         pickTwo.innerHTML = ''
-    //         pickOne = ''
-    //         pickTwo = ''
-    //         //}
-    //       }, 300)
-    //       // })
-    //     } else if (pickOne.value === pickTwo.value) {
-    //       pickOne.classList.add('matched')
-    //       pickTwo.classList.add('matched')
-    //       pickOne.innerHTML = ''
-    //       pickTwo.innerHTML = ''
-    //       pickOne = ''
-    //       pickTwo = ''
-    //       matchCount++
-    //       //playerScore += 10
-    //       //score.innerText = playerScore
-    //       if (matchCount === 8) {
-    //         playAgain.disabled = false
-    //         playAgain.innerText = 'Next Album!'
-    //         buttons.forEach((box) => box.classList.add('won'))
-    //         currentAlbumChoice.style.display = 'block'
-    //         //playerScore += 50
-    //         //score.innerText = playerScore
-    //         //totalScore = playerScore
-    //       }
-    //     }
-    //   }
-    // })
   })
 }
 

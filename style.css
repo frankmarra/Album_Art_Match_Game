@@ -108,12 +108,13 @@ body {
 .fa-xmark {
   font-size: 40px;
 }
-.score-box {
+.score-box,
+.strike-box {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
-  font-size: 30px;
+  font-size: 2vw;
   font-family: Arial, Helvetica, sans-serif;
   color: #4369d9;
   width: 100%;
@@ -141,6 +142,11 @@ body {
   text-align: center;
   margin: 3vh;
 }
+
+/* .strikes {
+  font-size: 2vw;
+  color: #4369d9;
+} */
 
 @media (max-width: 650px) {
   .nav-night {
