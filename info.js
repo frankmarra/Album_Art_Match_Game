@@ -13,8 +13,12 @@ const gameTriesTable = document.querySelectorAll('.game-tries')
 
 //local storage
 let allGames = localStorage.getItem('all-player-games')
-allGames = allGames.split(',')
-allGames = JSON.parse(allGames)
+if (allGames === null) {
+  allGames = []
+} else {
+  allGames = allGames.split(',')
+  allGames = JSON.parse(allGames)
+}
 
 //game table generator
 if (allGames.length < 5) {
