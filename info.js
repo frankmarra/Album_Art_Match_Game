@@ -21,38 +21,19 @@ if (allGames === null) {
 }
 
 //game table generator
-if (allGames.length < 5) {
-  for (let i = 0; i < allGames.length; i++) {
-    let dateGame = document.createElement('td')
-    dateGame.innerHTML = `${allGames[i].month}/${allGames[i].date}/${allGames[i].year} Game - ${allGames[i].game['game-number']}`
-    let gameScore = document.createElement('td')
-    gameScore.innerHTML = allGames[i].game['player-score']
-    let gameTries = document.createElement('td')
-    gameTries.innerHTML = allGames[i].game['player-tries']
-    let newRow = document.createElement('tr')
-    newRow.appendChild(dateGame)
-    newRow.appendChild(gameScore)
-    newRow.appendChild(gameTries)
-    scoreList.appendChild(newRow)
-  }
-} else if (allGames.length > 5) {
-  for (let i = 0; i < 5; i++) {
-    let dateGame = document.createElement('td')
-    dateGame.innerHTML = `${allGames[i].month}/${allGames[i].date}/${allGames[i].year} Game - ${allGames[i].game['game-number']}`
-    dateGame.classList.add('date-game')
-    let gameScore = document.createElement('td')
-    gameScore.innerHTML = allGames[i].game['player-score']
-    gameScore.classList.add('game-score')
-    let gameTries = document.createElement('td')
-    gameTries.innerHTML = allGames[i].game['player-tries']
-    gameTries.classList.add('game-tries')
-    let newRow = document.createElement('tr')
-    newRow.appendChild(dateGame)
-    newRow.appendChild(gameScore)
-    newRow.appendChild(gameTries)
-    console.log(newRow)
-    scoreList.appendChild(newRow)
-  }
+
+for (let i = 0; i < allGames.length; i++) {
+  let dateGame = document.createElement('td')
+  dateGame.innerHTML = `${allGames[i].month}/${allGames[i].date}/${allGames[i].year} Game - ${allGames[i].game['game-number']}`
+  let gameScore = document.createElement('td')
+  gameScore.innerHTML = allGames[i].game['player-score']
+  let gameTries = document.createElement('td')
+  gameTries.innerHTML = allGames[i].game['player-tries']
+  let newRow = document.createElement('tr')
+  newRow.appendChild(dateGame)
+  newRow.appendChild(gameScore)
+  newRow.appendChild(gameTries)
+  scoreList.appendChild(newRow)
 }
 
 //light dark mode
