@@ -33,7 +33,11 @@
 
 #### This will take you to the game screen, where all you have to do is click the "Let's Play!" button and start matching. After clearing all of the boxes, the album artist and title will be displayed with the full artwork. You can also now click on the "Next Album" button to play again.
 
+![image](./images/Record_Reveal_Info_Pic.jpg)
+
 #### Each correct guess will get you 10 points, while each wrong guess will take away 5. See if you can get a high score in as low amount of tries as possible!
+
+![image](./images/Record_Reveal_Gameplay_pic.jpg)
 
 #### More features will be added to the game as time allows. Some future implementations include:
 
