@@ -143,11 +143,6 @@ body {
   margin: 3vh;
 }
 
-/* .strikes {
-  font-size: 2vw;
-  color: #4369d9;
-} */
-
 @media (max-width: 650px) {
   .nav-night {
     font-size: 0.8rem;
@@ -179,9 +174,12 @@ body {
     width: 300px;
     height: 300px;
   }
-
-  .score-box {
-    font-size: 20px;
+  .score-text {
+    margin: 0 4px;
+  }
+  .score-box,
+  .strike-box {
+    font-size: 18px;
   }
   .instructions {
     font-size: 0.7rem;
@@ -246,7 +244,7 @@ body {
 .play-again-button-day:disabled {
   color: #f2e8dc;
   background-color: #d9a74a;
-  border: solid #a07627;
+  border: inset #a07627;
   box-shadow: 0 2px 2px 3px rgba(217, 167, 74, 0.7);
 }
 
@@ -263,7 +261,9 @@ body {
   color: #d9a74a;
 }
 
-.score-box-day {
+.score-box-day,
+.strike-box-day,
+.current-album-title-day {
   color: #d9a74a;
 }
 
