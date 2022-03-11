@@ -24,6 +24,19 @@ let playerStrikes = 0
 let pickOne = ''
 let pickTwo = ''
 let matchCount = 0
+let gamesPlayed = 0
+let gamesPlayedArray = []
+let today = new Date()
+let todayYear = today.getFullYear()
+let todayDate = today.getDate()
+
+class GameStat {
+  constructor(year, date, game) {
+    this.year = year
+    this.date = date
+    this.game = game
+  }
+}
 //Search page function
 const albumArtList = (album) => {
   album.forEach((alb) => {
@@ -59,8 +72,14 @@ const getAlbums = async () => {
   albumArtList(album)
 }
 
+// const localStorageAdder = (gamesPlayedArray) => {
+//   let allGames = localStorage.getItem('all-player-games')
+//   if (allGames === []) {
+//     console.log('test')
+//   }
+// }
+
 const gameLogic = (evt) => {
-  console.log(evt)
   let gameBox = evt.srcElement
   if (pickOne === '') {
     pickOne = gameBox
@@ -83,7 +102,7 @@ const gameLogic = (evt) => {
         pickTwo.innerHTML = ''
         pickOne = ''
         pickTwo = ''
-      }, 300)
+      }, 500)
     } else if (pickOne.value === pickTwo.value) {
       pickOne.classList.add('matched')
       pickTwo.classList.add('matched')
@@ -103,11 +122,15 @@ const gameLogic = (evt) => {
         playAgain.innerText = 'Next Album!'
         playerScore += 50
         score.innerText = playerScore
-        const stats = {
-          tries: playerStrikes,
-          score: playerScore
+        gamesPlayed++
+        const gameScores = {
+          'game-number': gamesPlayed,
+          'player-tries': playerStrikes,
+          'player-score': playerScore
         }
-        window.localStorage.setItem('player-stats', JSON.stringify(stats))
+        const gameLog = new GameStat(todayYear, todayDate, gameScores)
+        gamesPlayedArray.push(gameLog)
+        localStorageAdder(gamesPlayedArray)
       }
     }
   }

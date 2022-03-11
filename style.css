@@ -132,7 +132,7 @@ body {
 }
 
 .fa-umbrella-beach {
-  color: black;
+  color: gray;
 }
 
 .current-album-title {
@@ -224,7 +224,11 @@ body {
 .fa-solid,
 .score-box,
 .fa-sun,
-.fa-ghost {
+.fa-ghost,
+.info-page,
+.game-play-info,
+.high-score-list,
+.game-play-info a {
   transition: 0.3s;
 }
 .nav-day {
@@ -232,7 +236,8 @@ body {
   color: #f2e8dc;
 }
 
-.game-page-day {
+.game-page-day,
+.info-page-day {
   background-color: #f1c4f2;
 }
 
@@ -257,17 +262,14 @@ body {
   background: #79baf2;
 }
 
-.fa-solid-day {
-  color: #d9a74a;
-}
-
 .score-box-day,
 .strike-box-day,
-.current-album-title-day {
-  color: #d9a74a;
-}
-
-.fa-umbrella-beach-day {
+.current-album-title-day,
+.fa-solid-day,
+.fa-umbrella-beach-day,
+.game-play-info-day,
+.high-score-list-day,
+.game-play-info-day a {
   color: #d9a74a;
 }
 
