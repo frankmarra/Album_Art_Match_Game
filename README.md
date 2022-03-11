@@ -1,6 +1,6 @@
 # Record Reveal
 
-## Date: 3/6/2022
+## Date: 3/11/2022
 
 ### By: Frank Marra
 
@@ -37,8 +37,8 @@
 
 #### More features will be added to the game as time allows. Some future implementations include:
 
-- Player score tracking
-  - On the "Info" page, your top 5 scores will be displayed
+- Player Hi-Score
+  - On the "Info" page, your top 5 scores will be displayed instead of just 5 scores.
 - Add a player timer
   - This will track your time and give you extra points based on how quickly you solve the puzzle.
 - Have a more curated selection of album artwork to play with.

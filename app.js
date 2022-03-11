@@ -13,7 +13,6 @@ const scoreBox = document.querySelector('.score-box')
 const strikeBox = document.querySelector('.strike-box')
 const dayIcon = document.querySelector('.fa-umbrella-beach')
 const nightIcon = document.querySelector('.fa-ghost')
-//search globals
 const SEARCH_DOMAIN = 'https://api.discogs.com/database/search?'
 const API_KEY = 'NFFuiOkGpBVELhAZbuku'
 const SECRET_KEY = 'vuxkHlTcqAaVwlHKbSkgDqSXILszAMeW'
@@ -29,11 +28,13 @@ let gamesPlayedArray = []
 let today = new Date()
 let todayYear = today.getFullYear()
 let todayDate = today.getDate()
+let todayMonth = today.getMonth()
 
 class GameStat {
-  constructor(year, date, game) {
+  constructor(year, date, month, game) {
     this.year = year
     this.date = date
+    this.month = month
     this.game = game
   }
 }
@@ -72,12 +73,19 @@ const getAlbums = async () => {
   albumArtList(album)
 }
 
-// const localStorageAdder = (gamesPlayedArray) => {
-//   let allGames = localStorage.getItem('all-player-games')
-//   if (allGames === []) {
-//     console.log('test')
-//   }
-// }
+const localStorageAdder = (gameLog) => {
+  let allGames = localStorage.getItem('all-player-games')
+  if (allGames === null) {
+    allGames = []
+    allGames.push(gameLog)
+    window.localStorage.setItem('all-player-games', JSON.stringify(allGames))
+  } else {
+    allGames = allGames.split(',')
+    allGames = JSON.parse(allGames)
+    allGames.push(gameLog)
+    window.localStorage.setItem('all-player-games', JSON.stringify(allGames))
+  }
+}
 
 const gameLogic = (evt) => {
   let gameBox = evt.srcElement
@@ -128,9 +136,14 @@ const gameLogic = (evt) => {
           'player-tries': playerStrikes,
           'player-score': playerScore
         }
-        const gameLog = new GameStat(todayYear, todayDate, gameScores)
-        gamesPlayedArray.push(gameLog)
-        localStorageAdder(gamesPlayedArray)
+        const gameLog = new GameStat(
+          todayYear,
+          todayDate,
+          todayMonth,
+          gameScores
+        )
+        //gamesPlayedArray.push(gameLog)
+        localStorageAdder(gameLog)
       }
     }
   }
@@ -203,6 +216,7 @@ playAgain.addEventListener('click', () => {
   gameStart(gameButtons)
 })
 
+//Light and Dark mode
 dayIcon.addEventListener('click', () => {
   nav.classList.toggle('nav-day')
   gamePage.classList.toggle('game-page-day')

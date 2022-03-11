@@ -207,7 +207,11 @@ body {
   text-align: center;
   color: #f2f2f2;
 }
-
+.high-score-list {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
 .game-play-info {
   font-size: 2.8vmin;
   padding: 0 4vw;
@@ -215,6 +219,18 @@ body {
 .game-play-info a {
   color: #f2f2f2;
   text-decoration: none;
+}
+
+table {
+  text-align: center;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #4369d9;
 }
 
 /* Day Mode */
