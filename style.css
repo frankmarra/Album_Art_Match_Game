@@ -100,9 +100,6 @@ body {
   height: 100%;
   width: 100%;
 }
-.matched {
-  background: transparent;
-}
 
 .fa-solid {
   font-size: 100px;
@@ -129,7 +126,7 @@ body {
 
 .fa-ghost,
 .fa-umbrella-beach {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 0 3vw;
 }
 
@@ -137,9 +134,17 @@ body {
   color: black;
 }
 
+.current-album-title {
+  display: none;
+  font-size: 3vw;
+  color: #4369d9;
+  text-align: center;
+  margin: 3vh;
+}
+
 @media (max-width: 650px) {
-  nav {
-    font-size: 0.9rem;
+  .nav-night {
+    font-size: 0.8rem;
   }
   .play-again-button {
     font-size: 0.6rem;
@@ -176,11 +181,11 @@ body {
     font-size: 0.7rem;
   }
 
-  .art-choices {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-  .art-choice-button {
-    font-size: 0.6rem;
+  .fa-ghost,
+  .fa-umbrella-beach,
+  .fa-ghost-day,
+  .fa-umbrella-beach-day {
+    font-size: 1rem;
   }
 }
 
@@ -262,6 +267,10 @@ body {
 
 .fa-ghost-day {
   color: black;
+}
+
+.matched {
+  background: transparent;
 }
 
 .won {
